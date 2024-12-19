@@ -56,9 +56,9 @@ export function Pomodoro({ onClose, open, show }: PomodoroProps) {
 
   const tabs = useMemo(
     () => [
-      { id: 'pomodoro', label: 'Pomodoro' },
-      { id: 'short', label: 'Break' },
-      { id: 'long', label: 'Long Break' },
+      { id: 'pomodoro', label: '番茄钟' },
+      { id: 'short', label: '短休息' },
+      { id: 'long', label: '长休息' },
     ],
     [],
   );
@@ -123,12 +123,12 @@ export function Pomodoro({ onClose, open, show }: PomodoroProps) {
     <>
       <Modal show={show} onClose={onClose}>
         <header className={styles.header}>
-          <h2 className={styles.title}>Pomodoro Timer</h2>
+          <h2 className={styles.title}>番茄钟</h2>
 
           <div className={styles.button}>
             <Button
               icon={<IoMdSettings />}
-              tooltip="Change Times"
+              tooltip="更改时间"
               onClick={() => {
                 onClose();
                 setShowSetting(true);
@@ -142,19 +142,19 @@ export function Pomodoro({ onClose, open, show }: PomodoroProps) {
 
         <div className={styles.control}>
           <p className={styles.completed}>
-            {completions[selectedTab] || 0} completed
+            {completions[selectedTab] || 0} 已完成
           </p>
           <div className={styles.buttons}>
             <Button
               icon={<FaUndo />}
               smallIcon
-              tooltip="Restart"
+              tooltip="重新开始"
               onClick={restart}
             />
             <Button
               icon={running ? <FaPause /> : <FaPlay />}
               smallIcon
-              tooltip={running ? 'Pause' : 'Start'}
+              tooltip={running ? '暂停' : '开始'}
               onClick={toggleRunning}
             />
           </div>

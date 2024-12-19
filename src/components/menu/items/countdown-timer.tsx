@@ -7,7 +7,7 @@ export function CountdownTimer() {
     <Item
       href="https://timesy.app"
       icon={<MdOutlineTimer />}
-      label="Countdown Timer"
+      label="倒计时"
     />
   );
 }

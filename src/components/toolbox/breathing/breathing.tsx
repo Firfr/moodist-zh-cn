@@ -11,7 +11,7 @@ interface TimerProps {
 export function BreathingExercise({ onClose, show }: TimerProps) {
   return (
     <Modal show={show} onClose={onClose}>
-      <h2 className={styles.title}>Breathing Exercise</h2>
+      <h2 className={styles.title}>呼吸练习</h2>
       <Exercise />
     </Modal>
   );
