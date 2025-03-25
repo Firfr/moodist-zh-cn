@@ -2,7 +2,7 @@
   <img src="/assets/banner.svg" alt="Moodist Logo Banner" />
   <h2>Moodist 🌲</h2>
   <p>环境音助您专注与平静。</p>
-  <a href="https://moodist.app">访问 <strong>Moodist(原项目作者提供的，英文)</strong></a> | <a href="https://buymeacoffee.com/remvze">请我喝杯咖啡(项目原作者)</a>
+  <a href="https://moodist.app">访问 <strong>Moodist</strong> (原项目作者提供的，英文)</a> | <a href="https://buymeacoffee.com/remvze">请我喝杯咖啡(项目原作者)</a>
 </div>
 
 ## 翻译说明
