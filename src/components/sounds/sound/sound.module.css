@@ -1,0 +1,122 @@
+.sound {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 25px 20px;
+  text-align: center;
+  background: linear-gradient(var(--color-neutral-100), transparent);
+  border: 1px solid var(--color-neutral-200);
+  border-radius: 8px;
+  transition: 0.2s;
+
+  &:focus-visible {
+    outline: 2px solid var(--color-neutral-400);
+    outline-offset: 2px;
+  }
+
+  &.hidden {
+    display: none;
+  }
+
+  &:not(.selected)::before {
+    position: absolute;
+    top: -1px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    content: '';
+    background: linear-gradient(
+      90deg,
+      transparent,
+      var(--color-neutral-400),
+      transparent
+    );
+  }
+
+  & .icon {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    font-size: var(--font-base);
+    color: var(--color-foreground-subtler);
+    transition: 0.2s;
+
+    & span {
+      line-height: 0;
+    }
+
+    &::after {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      width: 100%;
+      height: 100%;
+      content: '';
+      background-color: var(--color-neutral-50);
+      border-radius: 50%;
+    }
+
+    &::before {
+      position: absolute;
+      top: -1px;
+      left: -1px;
+      z-index: -2;
+      width: calc(100% + 2px);
+      height: calc(100% + 2px);
+      content: '';
+      background: linear-gradient(
+        var(--color-neutral-300),
+        var(--color-neutral-100)
+      );
+      border-radius: 50%;
+    }
+
+    & .spinner {
+      line-height: 0;
+      animation-name: spinner;
+      animation-duration: 1s;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+    }
+  }
+
+  &:hover .icon,
+  &:focus-visible .icon {
+    color: var(--color-foreground-subtle);
+  }
+
+  &.selected {
+    border-color: transparent;
+    box-shadow: 0 0 0 2px var(--color-neutral-800);
+
+    & .icon {
+      color: var(--color-foreground);
+    }
+  }
+
+  & .label {
+    margin-top: 8px;
+    font-family: var(--font-heading);
+    font-size: var(--font-sm);
+    font-weight: 600;
+    line-height: 1.6;
+    cursor: default;
+  }
+}
+
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}

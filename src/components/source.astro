@@ -3,6 +3,7 @@ import { FaGithub } from 'react-icons/fa/index';
 
 import { SpecialButton } from './special-button';
 import { Container } from './container';
+import { Binary } from './binary';
 ---
 
 <div class="source">
@@ -15,19 +16,16 @@ import { Container } from './container';
         </div>
       </div>
 
-      <h2 class="title">开源</h2>
-      <p class="desc">Moodist 是免费且开源的！</p>
+      <h2 class="title"><span>Open Source</span></h2>
+      <p class="desc">Moodist is free and open-source!</p>
 
       <div class="button">
         <SpecialButton href="https://github.com/remvze/moodist">
-          源代码
+          Source Code
         </SpecialButton>
       </div>
-      <div class="button">
-        <SpecialButton href="https://github.com/Firfr/moodist-zh-cn">
-          中文翻译代码仓库
-        </SpecialButton>
-      </div>
+
+      <div class="binary"><Binary client:load /></div>
     </div>
   </Container>
 </div>
@@ -39,8 +37,27 @@ import { Container } from './container';
     & .wrapper {
       position: relative;
       padding: 0 20px 40px;
+      overflow: hidden;
       background: linear-gradient(transparent, rgb(24 24 27 / 70%));
       border-radius: 0 0 20px 20px;
+
+      & .binary {
+        position: absolute;
+        bottom: -2.1rem;
+        left: 50%;
+        width: calc(100% + 10px);
+        height: 200px;
+        overflow: hidden;
+        font-family: 'Nimbus Mono PS', 'Courier New', monospace;
+        color: var(--color-foreground-subtler);
+        word-break: break-all;
+        pointer-events: none;
+        cursor: default;
+        user-select: none;
+        opacity: 0.35;
+        mask-image: linear-gradient(transparent, #000);
+        transform: translateX(-50%);
+      }
 
       &::after {
         position: absolute;
@@ -78,7 +95,10 @@ import { Container } from './container';
         width: 45px;
         height: 45px;
         font-size: var(--font-md);
-        background-color: var(--color-neutral-100);
+        background: linear-gradient(
+          var(--color-neutral-50),
+          var(--color-neutral-100)
+        );
         border: 1px solid var(--color-neutral-300);
         border-radius: 50%;
       }
@@ -89,6 +109,16 @@ import { Container } from './container';
       font-size: var(--font-lg);
       font-weight: 600;
       text-align: center;
+
+      & span {
+        background: linear-gradient(
+          135deg,
+          var(--color-foreground),
+          var(--color-foreground-subtle)
+        );
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
     }
 
     & .desc {

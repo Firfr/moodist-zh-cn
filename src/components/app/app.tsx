@@ -12,6 +12,7 @@ import { Categories } from '@/components/categories';
 import { SharedModal } from '@/components/modals/shared';
 import { Toolbar } from '@/components/toolbar';
 import { SnackbarProvider } from '@/contexts/snackbar';
+import { MediaControls } from '@/components/media-controls';
 
 import { sounds } from '@/data/sounds';
 import { FADE_OUT } from '@/constants/events';
@@ -78,7 +79,7 @@ export function App() {
         icon: <BiSolidHeart />,
         id: 'favorites',
         sounds: favoriteSounds as Array<Sound>,
-        title: '收藏项',
+        title: 'Favorites',
       });
     }
 
@@ -88,6 +89,7 @@ export function App() {
   return (
     <SnackbarProvider>
       <StoreConsumer>
+        <MediaControls />
         <Container>
           <div id="app" />
           <Buttons />

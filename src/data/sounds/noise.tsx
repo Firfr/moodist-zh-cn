@@ -10,21 +10,21 @@ export const noise: Category = {
     {
       icon: <GiSoundWaves />,
       id: 'white-noise',
-      label: '白噪音',
+      label: 'White Noise',
       src: '/sounds/noise/white-noise.wav',
     },
     {
       icon: <GiSoundWaves />,
       id: 'pink-noise',
-      label: '粉红噪音',
+      label: 'Pink Noise',
       src: '/sounds/noise/pink-noise.wav',
     },
     {
       icon: <GiSoundWaves />,
       id: 'brown-noise',
-      label: '棕色噪音',
+      label: 'Brown Noise',
       src: '/sounds/noise/brown-noise.wav',
     },
   ],
-  title: '噪音',
+  title: 'Noise',
 };

@@ -1,0 +1,40 @@
+.category {
+  &:not(:last-of-type) {
+    margin-bottom: 20px;
+  }
+
+  & .iconContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 15px;
+
+    & .tail {
+      width: 1px;
+      height: 75px;
+      background: linear-gradient(transparent, var(--color-neutral-300));
+    }
+
+    & .icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 45px;
+      height: 45px;
+      font-size: var(--font-md);
+      background: linear-gradient(
+        var(--color-neutral-50),
+        var(--color-neutral-100)
+      );
+      border: 1px solid var(--color-neutral-300);
+      border-radius: 50%;
+    }
+  }
+
+  & .title {
+    font-family: var(--font-display);
+    font-size: var(--font-lg);
+    font-weight: 600;
+    text-align: center;
+  }
+}

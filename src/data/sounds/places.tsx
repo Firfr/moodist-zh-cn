@@ -13,6 +13,8 @@ import {
 } from 'react-icons/md/index';
 import { HiOfficeBuilding } from 'react-icons/hi/index';
 import { AiFillExperiment } from 'react-icons/ai/index';
+import { IoRestaurant } from 'react-icons/io5/index';
+import { FaBookOpen } from 'react-icons/fa6/index';
 
 import type { Category } from '../types';
 
@@ -23,87 +25,99 @@ export const places: Category = {
     {
       icon: <BiSolidCoffeeAlt />,
       id: 'cafe',
-      label: '咖啡馆',
+      label: 'Cafe',
       src: '/sounds/places/cafe.mp3',
     },
     {
       icon: <BiSolidPlaneAlt />,
       id: 'airport',
-      label: '机场',
+      label: 'Airport',
       src: '/sounds/places/airport.mp3',
     },
     {
       icon: <FaChurch />,
       id: 'church',
-      label: '教堂',
+      label: 'Church',
       src: '/sounds/places/church.mp3',
     },
     {
       icon: <MdTempleBuddhist />,
       id: 'temple',
-      label: '寺庙',
+      label: 'Temple',
       src: '/sounds/places/temple.mp3',
     },
     {
       icon: <MdConstruction />,
       id: 'construction-site',
-      label: '建筑工地',
+      label: 'Construction Site',
       src: '/sounds/places/construction-site.mp3',
     },
     {
       icon: <TbScubaMask />,
       id: 'underwater',
-      label: '水下',
+      label: 'Underwater',
       src: '/sounds/places/underwater.mp3',
     },
     {
       icon: <TbBeerFilled />,
       id: 'crowded-bar',
-      label: '拥挤的酒吧',
+      label: 'Crowded Bar',
       src: '/sounds/places/crowded-bar.mp3',
     },
     {
       icon: <GiVillage />,
       id: 'night-village',
-      label: '夜间的村庄',
+      label: 'Night Village',
       src: '/sounds/places/night-village.mp3',
     },
     {
       icon: <FaSubway />,
       id: 'subway-station',
-      label: '地铁站',
+      label: 'Subway Station',
       src: '/sounds/places/subway-station.mp3',
     },
     {
       icon: <HiOfficeBuilding />,
       id: 'office',
-      label: '办公室',
+      label: 'Office',
       src: '/sounds/places/office.mp3',
     },
     {
       icon: <FaShoppingBasket />,
       id: 'supermarket',
-      label: '超市',
+      label: 'Supermarket',
       src: '/sounds/places/supermarket.mp3',
     },
     {
       icon: <GiCarousel />,
       id: 'carousel',
-      label: '旋转木马',
+      label: 'Carousel',
       src: '/sounds/places/carousel.mp3',
     },
     {
       icon: <AiFillExperiment />,
       id: 'laboratory',
-      label: '实验室',
+      label: 'Laboratory',
       src: '/sounds/places/laboratory.mp3',
     },
     {
       icon: <BiSolidDryer />,
       id: 'laundry-room',
-      label: '洗衣房',
+      label: 'Laundry Room',
       src: '/sounds/places/laundry-room.mp3',
     },
+    {
+      icon: <IoRestaurant />,
+      id: 'restaurant',
+      label: 'Restaurant',
+      src: '/sounds/places/restaurant.mp3',
+    },
+    {
+      icon: <FaBookOpen />,
+      id: 'library',
+      label: 'Library',
+      src: '/sounds/places/library.mp3',
+    },
   ],
-  title: '环境音',
+  title: 'Places',
 };

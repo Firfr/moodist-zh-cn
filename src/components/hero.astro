@@ -2,6 +2,7 @@
 import { BsSoundwave } from 'react-icons/bs/index';
 
 import { Container } from './container';
+import { CipherText } from './cipher';
 
 import { count as soundCount } from '@/lib/sounds';
 
@@ -11,28 +12,30 @@ const count = soundCount();
 <div class="hero">
   <Container>
     <div class="wrapper">
-      <img
-        alt="透明的 Moodist 图标"
-        aria-hidden="true"
-        class="logo"
-        height={45}
-        src="/logo.svg"
-        width={45}
-      />
-
-      <div class="title">
-        <div class="left"></div>
-        <h2>Moodist 白噪音</h2>
-        <div class="right"></div>
+      <div class="pattern"></div>
+      <div class="logo-wrapper">
+        <img
+          alt="Faded Moodist Logo"
+          aria-hidden="true"
+          class="logo"
+          height={48}
+          src="/logo.svg"
+          width={48}
+        />
       </div>
 
-      <h1 class="desc">用于专注与平静的环境音效。</h1>
+      <h1 class="title">
+        Ambient Sounds<span class="line">For Focus and Calm</span>
+      </h1>
+      <h2 class="desc">
+        Free and <CipherText client:load text="Open-Source" />.
+      </h2>
 
       <p class="sounds">
         <span aria-hidden="true" class="icon">
           <BsSoundwave />
         </span>
-        <span>{count} 种音效</span>
+        <span>{count} Sounds</span>
       </p>
     </div>
   </Container>
@@ -44,54 +47,71 @@ const count = soundCount();
 
     .wrapper {
       position: relative;
-      padding: 100px 0 80px;
+      padding: 120px 0 80px;
+
+      & .pattern {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        width: 100%;
+        height: 100%;
+        background-image: radial-gradient(
+          var(--color-neutral-500) 5%,
+          transparent 5%
+        );
+        background-position: top center;
+        background-size: 21px 21px;
+        opacity: 0.8;
+        mask-image: linear-gradient(#fff, transparent, transparent);
+      }
     }
 
-    & .logo {
-      display: block;
-      width: 45px;
-      margin: 0 auto 12px;
+    & .logo-wrapper {
+      mask-image: linear-gradient(#000, rgb(0 0 0 / 40%), rgb(0 0 0 / 5%));
+
+      & .logo {
+        display: block;
+        width: 48px;
+        margin: 0 auto 20px;
+        opacity: 1;
+        animation-name: logo;
+        animation-duration: 60s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+      }
     }
 
     & .title {
-      display: flex;
-      column-gap: 15px;
-      align-items: center;
+      font-family: var(--font-display);
+      font-size: var(--font-xlg);
+      font-weight: 600;
+      line-height: 1;
 
-      & div {
-        flex-grow: 1;
-        height: 1px;
+      /* & .gradient {
+        background: linear-gradient(
+          135deg,
+          var(--color-foreground),
+          var(--color-foreground-subtle)
+        );
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+      } */
 
-        &.left {
-          background: linear-gradient(
-            90deg,
-            transparent,
-            transparent,
-            var(--color-neutral-200),
-            var(--color-neutral-300)
-          );
-        }
-
-        &.right {
-          background: linear-gradient(
-            90deg,
-            var(--color-neutral-300),
-            var(--color-neutral-200),
-            transparent,
-            transparent
-          );
-        }
-      }
-
-      & h2 {
-        font-family: var(--font-display);
-        font-size: var(--font-2xlg);
-        font-weight: 600;
+      & .line {
+        display: block;
+        margin-top: 2px;
+        background: linear-gradient(
+          var(--color-foreground-subtler),
+          var(--color-foreground-subtle)
+        );
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
       }
     }
 
     & .desc {
-      margin-top: 5px;
+      margin-top: 12px;
       line-height: 1.6;
       color: var(--color-foreground-subtle);
     }
@@ -138,6 +158,16 @@ const count = soundCount();
         );
         transform: translateX(-50%);
       }
+    }
+  }
+
+  @keyframes logo {
+    0% {
+      transform: rotate(0);
+    }
+
+    100% {
+      transform: rotate(360deg);
     }
   }
 </style>

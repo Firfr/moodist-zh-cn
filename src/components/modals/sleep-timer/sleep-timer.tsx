@@ -1,7 +1,7 @@
 import { useEffect, useState, useRef, useMemo } from 'react';
 
 import { Modal } from '@/components/modal';
-import { Timer } from '@/components/timer';
+import { Timer } from './timer';
 import { dispatch } from '@/lib/event';
 import { useSoundStore } from '@/stores/sound';
 import { cn } from '@/helpers/styles';
@@ -17,6 +17,7 @@ interface SleepTimerModalProps {
 
 export function SleepTimerModal({ onClose, show }: SleepTimerModalProps) {
   const setActive = useSleepTimerStore(state => state.set);
+  const noSelected = useSoundStore(state => state.noSelected());
 
   const [running, setRunning] = useState(false);
 
@@ -47,6 +48,7 @@ export function SleepTimerModal({ onClose, show }: SleepTimerModalProps) {
 
   const handleStart = () => {
     if (timerId.current) clearInterval(timerId.current);
+    if (noSelected) return;
     if (!isPlaying) play();
 
     if (totalSeconds > 0) {
@@ -63,7 +65,7 @@ export function SleepTimerModal({ onClose, show }: SleepTimerModalProps) {
   useEffect(() => {
     if (timeLeft === 0) {
       setRunning(false);
-      // pause();
+
       dispatch(FADE_OUT, { duration: 1000 });
 
       setTimeSpent(0);
@@ -89,9 +91,9 @@ export function SleepTimerModal({ onClose, show }: SleepTimerModalProps) {
   return (
     <Modal show={show} onClose={onClose}>
       <header className={styles.header}>
-        <h2 className={styles.title}>定时关闭</h2>
+        <h2 className={styles.title}>Sleep Timer</h2>
         <p className={styles.desc}>
-        停止声音时间
+          Stop sounds after a certain amount of time.
         </p>
       </header>
 
@@ -99,15 +101,15 @@ export function SleepTimerModal({ onClose, show }: SleepTimerModalProps) {
         <div className={styles.controls}>
           <div className={styles.inputs}>
             {!running && (
-              <Field label="小时" value={hours} onChange={setHours} />
+              <Field label="Hours" value={hours} onChange={setHours} />
             )}
 
             {!running && (
-              <Field label="分钟" value={minutes} onChange={setMinutes} />
+              <Field label="Minutes" value={minutes} onChange={setMinutes} />
             )}
           </div>
 
-          {running ? <Timer displayHours={true} timer={timeLeft} /> : null}
+          {running ? <Timer reverse={timeSpent} timer={timeLeft} /> : null}
 
           <div className={styles.buttons}>
             {running && (
@@ -116,7 +118,7 @@ export function SleepTimerModal({ onClose, show }: SleepTimerModalProps) {
                 type="button"
                 onClick={handleReset}
               >
-                重置
+                Reset
               </button>
             )}
 
@@ -125,7 +127,7 @@ export function SleepTimerModal({ onClose, show }: SleepTimerModalProps) {
                 className={cn(styles.button, styles.primary)}
                 type="submit"
               >
-                开始
+                Start
               </button>
             )}
           </div>
