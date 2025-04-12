@@ -15,14 +15,14 @@ export function Donate() {
       </div>
 
       <div className={styles.title}>
-        <span>Support Me</span>
+        <span>支持我(原作者)</span>
       </div>
-      <p className={styles.desc}>Help me keep Moodist ad-free.</p>
+      <p className={styles.desc}>帮助我保持Moodist无广告。<br/>这是这个项目原作者的捐赠链接。<br/>如有余力，请不吝支持，赠人玫瑰手有余香。</p>
       <SpecialButton
         className={styles.button}
         href="https://buymeacoffee.com/remvze"
       >
-        Donate Today
+        今日捐赠
       </SpecialButton>
     </div>
   );
