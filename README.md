@@ -38,7 +38,7 @@
     - 容器类别端口说明
       - `9260` HTTP访问端口
       - `9460` HTTPS访问端口，如果要自定义证书，建立证书目录`ssl`，在里面建立证书文件`cert.pem`，私钥文件`cert.key`，将证书目录映射到容器内部的证书目录`/ssl`
-    - 文件部署 见[docker-compose.yml](./docker-compose.yml) 👍推荐
+    - compose方式部署 见[docker-compose.yml](./docker-compose.yml) 👍推荐
     - 命令部署
         ````bash
         docker run -d \
