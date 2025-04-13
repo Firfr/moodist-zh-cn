@@ -1,12 +1,16 @@
-FROM docker.io/node:20-alpine3.18 AS build
+FROM node:20.19.0-alpine3.21 AS build
 WORKDIR /app
-COPY package*.json ./
-RUN npm install
 COPY . .
-RUN npm run build
+RUN npm config set registry https://registry.npmmirror.com && \
+    npm install && \
+    npm run build
 
-FROM docker.io/nginx:alpine AS runtime
+FROM nginx:1.26.3-alpine-slim AS runtime
+WORKDIR /app
+COPY ./docker/nginx/ssl /ssl
 COPY ./docker/nginx/nginx.conf /etc/nginx/nginx.conf
-COPY --from=build /app/dist /usr/share/nginx/html
+COPY --from=build /app/dist /app
 
-EXPOSE 8080
+EXPOSE 9260 9460
+
+# docker build -t firfe/moodist:25.4.6 .

@@ -1,0 +1,13 @@
+# git github vscode satro husky storybook配置
+.git/
+.astro/
+.github/
+.vscode/
+.husky/
+.storybook/ 
+
+# 编译文件
+dist/
+
+# 依赖模块
+node_modules/
