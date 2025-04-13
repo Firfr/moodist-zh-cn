@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="./assets/banner.png" alt="Moodist Logo Banner" />
+  <img src="./图片/顶部.png" alt="Moodist Logo Banner" />
   <h2>Moodist 🌲</h2>
   <p>Ambient sounds for focus and calm.</p>
   <p>环境音助您专注与平静。</p>
@@ -7,7 +7,6 @@
   <br />
   <a href="https://moodist.mvze.net">访问 <strong>Moodist</strong> (原项目作者提供的，英文)</a> | <a href="https://buymeacoffee.com/remvze">请我喝杯咖啡(项目原作者)</a>
 </div>
-
 
 ## 汉化说明
 
@@ -32,16 +31,24 @@
 1.  从现在开始，Docker镜像会上传到阿里云上，方便部署。
 2.  拉取镜像命令
     ```
+    docker pull crpi-aiy5xfxuied4b3f9.cn-chengdu.personal.cr.aliyuncs.com/firfe/moodist:25.4.6
     ```
 3.  部署  
     把下面的汉字 `自定义端口` 改成自己想要的端口
+    - 容器类别端口说明
+      - `9260` HTTP访问端口
+      - `9460` HTTPS访问端口，如果要自定义证书，建立证书目录`ssl`，在里面建立证书文件`cert.pem`，私钥文件`cert.key`，将证书目录映射到容器内部的证书目录`/ssl`
+    - 文件部署 见[docker-compose.yml](./docker-compose.yml) 👍推荐
     - 命令部署
         ````bash
-        部署命令
-        ````
-    - `compose.yaml`文件部署 👍推荐
-        ````yaml
-        部署文件
+        docker run -d \
+        --name moodist-zh \
+        --network bridge \
+        --restart always \
+        --log-opt max-size=1m \
+        --log-opt max-file=3 \
+        -p 9260:9260 -p 9460:9460 \
+        crpi-aiy5xfxuied4b3f9.cn-chengdu.personal.cr.aliyuncs.com/firfe/moodist:25.4.6
         ````
 ## 修改说明
 
@@ -50,14 +57,27 @@
 
 `./README.md` 文件翻译，增加 `## 汉化说明`、`## 修改说明`、`## 汉化效果截图`、`## 我的二维码` 部分。
 
-增加目录 `./图片`
+增加目录 `./图片`、`docker/nginx/ssl`  
 新增文件 `./翻译说明.md`、`./修改说明.md`  
+重写文件 `./Dockerfile`、`./docker-compose.yml`、`./docker/nginx/nginx.conf`
 
 ## 汉化效果截图
 
+**音效**
+![音效](./图片/音效.png)
+
+**介绍**
+![介绍](./图片/介绍.png)
+
+**工具**
+![工具](./图片/工具.png)
+
+**快捷键**
+![快捷键](./图片/快捷键.png)
+
 ## Table of Contents 目录
 
-- ⚡ [Features 特性](#feature-特性)
+- ⚡ [Features 特性](#features-特性)
 - 🧰 [Tools 工具](#tools-工具)
 - 🔮 [Commands 命令](#commands-命令)
 - 🚧 [Contributing 贡献](#contributing-贡献)
