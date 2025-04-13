@@ -17,12 +17,12 @@ interface Preset {
 }
 
 const presets: Preset[] = [
-  { baseFrequency: 100, beatFrequency: 2, name: 'Delta (Deep Sleep) 2 Hz' },
-  { baseFrequency: 100, beatFrequency: 5, name: 'Theta (Meditation) 5 Hz' },
-  { baseFrequency: 100, beatFrequency: 10, name: 'Alpha (Relaxation) 10 Hz' },
-  { baseFrequency: 100, beatFrequency: 20, name: 'Beta (Focus) 20 Hz' },
-  { baseFrequency: 100, beatFrequency: 40, name: 'Gamma (Cognition) 40 Hz' },
-  { baseFrequency: 440, beatFrequency: 10, name: 'Custom' },
+  { baseFrequency: 100, beatFrequency: 2, name: 'δ波（深度睡眠） 2 Hz' },
+  { baseFrequency: 100, beatFrequency: 5, name: 'θ波（冥想） 5 Hz' },
+  { baseFrequency: 100, beatFrequency: 10, name: 'α波（放松） 10 Hz' },
+  { baseFrequency: 100, beatFrequency: 20, name: 'β波（专注） 20 Hz' },
+  { baseFrequency: 100, beatFrequency: 40, name: 'γ波（认知） 40 Hz' },
+  { baseFrequency: 440, beatFrequency: 10, name: '自定义' },
 ];
 
 function computeBinauralBeatOscillatorFrequencies(
@@ -40,7 +40,7 @@ export function BinauralModal({ onClose, show }: BinauralProps) {
   const [beatFrequency, setBeatFrequency] = useState<number>(10); // Default to 10 Hz difference
   const [volume, setVolume] = useState<number>(0.5); // Default volume at 50%
   const [isPlaying, setIsPlaying] = useState<boolean>(false);
-  const [selectedPreset, setSelectedPreset] = useState<string>('Custom');
+  const [selectedPreset, setSelectedPreset] = useState<string>('自定义');
 
   const audioContextRef = useRef<AudioContext | null>(null);
   const leftOscillatorRef = useRef<OscillatorNode | null>(null);
@@ -135,7 +135,7 @@ export function BinauralModal({ onClose, show }: BinauralProps) {
 
   useEffect(() => {
     // Update frequencies when a preset is selected
-    if (selectedPreset !== 'Custom') {
+    if (selectedPreset !== '自定义') {
       const preset = presets.find(p => p.name === selectedPreset);
       if (preset) {
         setBaseFrequency(preset.baseFrequency);
@@ -148,7 +148,7 @@ export function BinauralModal({ onClose, show }: BinauralProps) {
     const selected = e.target.value;
     setSelectedPreset(selected);
 
-    if (selected === 'Custom') {
+    if (selected === '自定义') {
       // Allow user to input custom frequencies
       return;
     }
@@ -163,13 +163,13 @@ export function BinauralModal({ onClose, show }: BinauralProps) {
   return (
     <Modal show={show} onClose={onClose}>
       <header className={styles.header}>
-        <h2 className={styles.title}>Binaural Beat</h2>
-        <p className={styles.desc}>Binaural beat generator.</p>
+        <h2 className={styles.title}>双耳拍频</h2>
+        <p className={styles.desc}>双耳拍频生成器。</p>
       </header>
 
       <div className={styles.fieldWrapper}>
         <label>
-          Presets:
+        预设:
           <select value={selectedPreset} onChange={handlePresetChange}>
             {presets.map(preset => (
               <option key={preset.name} value={preset.name}>
@@ -179,11 +179,11 @@ export function BinauralModal({ onClose, show }: BinauralProps) {
           </select>
         </label>
       </div>
-      {selectedPreset === 'Custom' && (
+      {selectedPreset === '自定义' && (
         <>
           <div className={styles.fieldWrapper}>
             <label>
-              Base Frequency (Hz):
+            基础频率 (Hz):
               <input
                 max="1500"
                 min="20"
@@ -198,7 +198,7 @@ export function BinauralModal({ onClose, show }: BinauralProps) {
           </div>
           <div className={styles.fieldWrapper}>
             <label>
-              Beat Frequency (Hz):
+            拍频 (Hz):
               <input
                 max="40"
                 min="0.1"
@@ -215,7 +215,7 @@ export function BinauralModal({ onClose, show }: BinauralProps) {
       )}
       <div className={styles.fieldWrapper}>
         <label>
-          Volume:
+        音量调节:
           <Slider
             className={styles.volume}
             max={1}
@@ -232,10 +232,10 @@ export function BinauralModal({ onClose, show }: BinauralProps) {
           disabled={isPlaying}
           onClick={startSound}
         >
-          Start
+          开始
         </button>
         <button disabled={!isPlaying} onClick={stopSound}>
-          Stop
+        停止
         </button>
       </div>
     </Modal>

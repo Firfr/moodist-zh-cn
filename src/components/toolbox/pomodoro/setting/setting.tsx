@@ -46,34 +46,34 @@ export function Setting({ onChange, onClose, show, times }: SettingProps) {
 
   return (
     <Modal lockBody={false} show={show} onClose={onClose}>
-      <h2 className={styles.title}>Change Times</h2>
+      <h2 className={styles.title}>更改时间</h2>
 
       <form className={styles.form} onSubmit={handleSubmit}>
         <Field
           id="pomodoro"
-          label="Pomodoro"
+          label="工作时间"
           value={values.pomodoro}
           onChange={handleChange('pomodoro')}
         />
         <Field
           id="short"
-          label="Short Break"
+          label="短休息"
           value={values.short}
           onChange={handleChange('short')}
         />
         <Field
           id="long"
-          label="Long Break"
+          label="长休息"
           value={values.long}
           onChange={handleChange('long')}
         />
 
         <div className={styles.buttons}>
           <button type="button" onClick={handleCancel}>
-            Cancel
+          取消
           </button>
           <button className={styles.primary} type="submit">
-            Save
+          保存
           </button>
         </div>
       </form>
@@ -92,7 +92,7 @@ function Field({ id, label, onChange, value }: FieldProps) {
   return (
     <div className={styles.field}>
       <label className={styles.label} htmlFor={id}>
-        {label} <span>(minutes)</span>
+        {label} <span>(分钟)</span>
       </label>
       <input
         className={styles.input}

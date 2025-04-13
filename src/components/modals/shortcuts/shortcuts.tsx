@@ -11,53 +11,53 @@ export function ShortcutsModal({ onClose, show }: ShortcutsModalProps) {
   const shortcuts = [
     {
       keys: ['Shift', 'H'],
-      label: 'Shortcuts List',
+      label: '快捷键列表',
     },
     {
       keys: ['Shift', 'Alt', 'P'],
-      label: 'Presets',
+      label: '预设',
     },
     {
       keys: ['Shift', 'S'],
-      label: 'Share Sounds',
+      label: '分享声音',
     },
     {
       keys: ['Shift', 'Alt', 'T'],
-      label: 'Sleep Timer',
+      label: '定时关闭',
     },
     {
       keys: ['Shift', 'C'],
-      label: 'Countdown Timer',
+      label: '倒计时',
     },
     {
       keys: ['Shift', 'P'],
-      label: 'Pomodoro',
+      label: '番茄钟',
     },
     {
       keys: ['Shift', 'N'],
-      label: 'Notepad',
+      label: '便签',
     },
     {
       keys: ['Shift', 'T'],
-      label: 'Todo Checklist',
+      label: '代办清单',
     },
     {
       keys: ['Shift', 'B'],
-      label: 'Breathing Exercise',
+      label: '呼吸练习',
     },
     {
-      keys: ['Shift', 'Space'],
-      label: 'Toggle Play',
+      keys: ['Shift', '空格键'],
+      label: '切换播放',
     },
     {
       keys: ['Shift', 'R'],
-      label: 'Unselect All Sounds',
+      label: '取消所有选择',
     },
   ];
 
   return (
     <Modal show={show} onClose={onClose}>
-      <h1 className={styles.heading}>Keyboard Shortcuts</h1>
+      <h1 className={styles.heading}>快捷键</h1>
       <div className={styles.shortcuts}>
         {shortcuts.map(shortcut => (
           <Row

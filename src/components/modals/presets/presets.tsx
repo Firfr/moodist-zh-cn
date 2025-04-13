@@ -12,7 +12,7 @@ interface PresetsModalProps {
 export function PresetsModal({ onClose, show }: PresetsModalProps) {
   return (
     <Modal show={show} onClose={onClose}>
-      <h2 className={styles.title}>Presets</h2>
+      <h2 className={styles.title}>预设</h2>
       <New />
       <div className={styles.divider} />
       <List close={onClose} />

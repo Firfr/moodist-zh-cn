@@ -19,6 +19,7 @@ import {
   CountdownItem,
   BinauralItem,
   IsochronicItem,
+  SourceItemZh,
 } from './items';
 import { Divider } from './divider';
 import { ShareLinkModal } from '@/components/modals/share-link';
@@ -143,7 +144,7 @@ export function Menu() {
                     <Divider />
 
                     <div className={styles.globalVolume}>
-                      <label htmlFor="global-volume">Global Volume</label>
+                      <label htmlFor="global-volume">整体音量</label>
                       <Slider
                         max={100}
                         min={0}
@@ -155,6 +156,7 @@ export function Menu() {
                     <Divider />
                     <DonateItem />
                     <SourceItem />
+                    <SourceItemZh />
                   </motion.div>
                 </DropdownMenu.Content>
               </DropdownMenu.Portal>

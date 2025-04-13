@@ -10,7 +10,7 @@ export function Countdown({ open }: CountdownProps) {
   return (
     <Item
       icon={<MdOutlineTimer />}
-      label="Countdown Timer"
+      label="倒计时"
       shortcut="Shift + C"
       onClick={open}
     />
