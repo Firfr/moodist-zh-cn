@@ -7,5 +7,5 @@ interface LofiProps {
 }
 
 export function Lofi({ open }: LofiProps) {
-  return <Item icon={<FaHeadphonesAlt />} label="Lofi Music" onClick={open} />;
+  return <Item icon={<FaHeadphonesAlt />} label="低保真音乐(需联网)" onClick={open} />;
 }

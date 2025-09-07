@@ -106,7 +106,7 @@ export function Sounds({ functional, id, sounds }: SoundsProps) {
               onAnimationComplete={() => setIsAnimating(false)}
               onAnimationStart={() => setIsAnimating(true)}
             >
-              {showAll ? 'Show Less' : 'Show More'}
+              {showAll ? '收起' : '全部'}
             </motion.span>
           </AnimatePresence>
         </button>

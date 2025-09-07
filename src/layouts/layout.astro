@@ -12,33 +12,33 @@ interface Props {
   title?: string;
 }
 
-const title = Astro.props.title || 'Moodist: Ambient Sounds for Focus and Calm';
+const title = Astro.props.title || 'Moodist: 帮助专注与放松的环境音效';
 const description =
   Astro.props.description ||
-  `Moodist is a free and open-source ambient sound generator featuring ${count()} carefully curated sounds. Create your ideal atmosphere for relaxation, focus, or creativity with this versatile tool.`;
+  `Moodist 是一个免费且开源的环境音生成器，拥有 ${count()} 种精心挑选的声音。使用这个多功能工具创建适合放松、专注或创造的理想氛围。`;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="zh-cn">
   <head>
     <meta charset="UTF-8" />
     <meta content="width=device-width" name="viewport" />
     <meta content={Astro.generator} name="generator" />
     <meta content="#18181b" name="theme-color" />
-    <link href="/favicon.svg" rel="icon" type="image/svg+xml" />
+    <link href="favicon.svg" rel="icon" type="image/svg+xml" />
 
     <title>{title}</title>
     <meta content={title} name="title" />
     <meta content={description} name="description" />
 
-    <meta content={title} property="og:title" />
-    <meta content={description} property="og:description" />
-    <meta content="Moodist" property="og:site_name" />
-    <meta content="https://moodist.app" property="og:url" />
-    <meta content="website" property="og:type" />
-    <meta content="https://moodist.app/og.png" property="og:image" />
+    <!-- <meta content={title} property="og:title" /> -->
+    <!-- <meta content={description} property="og:description" /> -->
+    <!-- <meta content="Moodist" property="og:site_name" /> -->
+    <!-- <meta content="https://moodist.app" property="og:url" /> -->
+    <!-- <meta content="website" property="og:type" /> -->
+    <!-- <meta content="https://moodist.app/og.png" property="og:image" /> -->
 
-    <meta content="summary_large_image" name="twitter:card" />
+    <!-- <meta content="summary_large_image" name="twitter:card" /> -->
 
     {pwaInfo && <Fragment set:html={pwaInfo.webManifest.linkTag} />}
   </head>

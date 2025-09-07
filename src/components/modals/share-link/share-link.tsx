@@ -51,10 +51,9 @@ export function ShareLinkModal({ onClose, show }: ShareLinkModalProps) {
 
   return (
     <Modal show={show} onClose={onClose}>
-      <h1 className={styles.heading}>Share your sound selection!</h1>
+      <h1 className={styles.heading}>分享您的声音组合！</h1>
       <p className={styles.desc}>
-        Copy and send the following link to the person you want to share your
-        selection with.
+        复制并发送以下链接给想要分享声音选择的人。<br />下方右侧复制按钮仅HTTPS协议可用！
       </p>
       <div className={styles.inputWrapper}>
         <input readOnly type="text" value={url} />

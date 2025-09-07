@@ -18,6 +18,8 @@ import {
   TodoItem,
   CountdownItem,
   BinauralItem,
+  SourceItemZh,
+  SourceItemZhGitee,
   IsochronicItem,
   LofiItem,
 } from './items';
@@ -147,7 +149,7 @@ export function Menu() {
                     <Divider />
 
                     <div className={styles.globalVolume}>
-                      <label htmlFor="global-volume">Global Volume</label>
+                      <label htmlFor="global-volume">整体音量</label>
                       <Slider
                         max={100}
                         min={0}
@@ -159,6 +161,8 @@ export function Menu() {
                     <Divider />
                     <DonateItem />
                     <SourceItem />
+                    <SourceItemZh />
+                    <SourceItemZhGitee />
                   </motion.div>
                 </DropdownMenu.Content>
               </DropdownMenu.Portal>

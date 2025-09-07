@@ -45,16 +45,16 @@ export function UnselectButton() {
               showDelay={0}
               content={
                 hasHistory
-                  ? 'Restore unselected sounds.'
-                  : 'Unselect all sounds.'
+                  ? '恢复未选择的声音。'
+                  : '取消选择所有声音。'
               }
             >
               <button
                 disabled={noSelected && !hasHistory}
                 aria-label={
                   hasHistory
-                    ? 'Restore Unselected Sounds'
-                    : 'Unselect All Sounds'
+                    ? '恢复未选择的声音'
+                    : '取消选择所有声音'
                 }
                 className={cn(
                   styles.unselectButton,

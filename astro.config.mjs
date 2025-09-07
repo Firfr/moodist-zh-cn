@@ -4,12 +4,16 @@ import react from '@astrojs/react';
 import AstroPWA from '@vite-pwa/astro';
 
 export default defineConfig({
+  server: {
+    host: '0.0.0.0', // 监听所有网卡
+    port: 1234,      // 可选：指定端口
+  },
   integrations: [
     react(),
     AstroPWA({
       manifest: {
         background_color: '#09090b',
-        description: 'Ambient sounds for focus and calm.',
+        description: '环境音助您专注与平静。',
         display: 'standalone',
         icons: [
           ...[72, 128, 144, 152, 192, 256, 512].map(size => ({

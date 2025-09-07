@@ -44,24 +44,23 @@ export function LofiModal({ onClose, show }: LofiProps) {
 
   return (
     <Modal persist show={show} onClose={onClose}>
-      <h1 className={styles.title}>Lofi Music Player</h1>
+      <h1 className={styles.title}>播放低保真音乐</h1>
 
       {!isAccepted ? (
         <div className={styles.notice}>
           <p>
-            This feature plays music using embedded YouTube videos. By
-            continuing, you agree to connect to YouTube, which may collect data
-            in accordance with their privacy policy. We do not control or track
-            this data.
+            此功能使用嵌入的 YouTube 视频播放音乐。
+            继续使用即表示您同意连接到 YouTube，YouTube 可能会根据其隐私政策收集数据。
+            我们无法控制或追踪这些数据。
           </p>
 
           <div className={styles.buttons}>
-            <button onClick={onClose}>Cancel</button>
+            <button onClick={onClose}>取消</button>
             <button
               className={styles.primary}
               onClick={() => setIsAccepted(true)}
             >
-              Continue
+              继续
             </button>
           </div>
         </div>

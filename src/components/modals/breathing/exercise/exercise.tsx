@@ -5,31 +5,31 @@ import { padNumber } from '@/helpers/number';
 
 import styles from './exercise.module.css';
 
-type Exercise = 'Box Breathing' | 'Resonant Breathing' | '4-7-8 Breathing';
+type Exercise = '盒式呼吸法' | '共振呼吸法' | '4-7-8 呼吸法';
 type Phase = 'inhale' | 'exhale' | 'holdInhale' | 'holdExhale';
 
 const EXERCISE_PHASES: Record<Exercise, Phase[]> = {
-  '4-7-8 Breathing': ['inhale', 'holdInhale', 'exhale'],
-  'Box Breathing': ['inhale', 'holdInhale', 'exhale', 'holdExhale'],
-  'Resonant Breathing': ['inhale', 'exhale'],
+  '4-7-8 呼吸法': ['inhale', 'holdInhale', 'exhale'],
+  '盒式呼吸法': ['inhale', 'holdInhale', 'exhale', 'holdExhale'],
+  '共振呼吸法': ['inhale', 'exhale'],
 };
 
 const EXERCISE_DURATIONS: Record<Exercise, Partial<Record<Phase, number>>> = {
-  '4-7-8 Breathing': { exhale: 8, holdInhale: 7, inhale: 4 },
-  'Box Breathing': { exhale: 4, holdExhale: 4, holdInhale: 4, inhale: 4 },
-  'Resonant Breathing': { exhale: 5, inhale: 5 }, // No holdExhale
+  '4-7-8 呼吸法': { exhale: 8, holdInhale: 7, inhale: 4 },
+  '盒式呼吸法': { exhale: 4, holdExhale: 4, holdInhale: 4, inhale: 4 },
+  '共振呼吸法': { exhale: 5, inhale: 5 }, // No holdExhale
 };
 
 const PHASE_LABELS: Record<Phase, string> = {
-  exhale: 'Exhale',
-  holdExhale: 'Hold',
-  holdInhale: 'Hold',
-  inhale: 'Inhale',
+  exhale: '呼气',
+  holdExhale: '屏息',
+  holdInhale: '屏息',
+  inhale: '吸气',
 };
 
 export function Exercise() {
   const [selectedExercise, setSelectedExercise] =
-    useState<Exercise>('4-7-8 Breathing');
+    useState<Exercise>('4-7-8 呼吸法');
   const [phaseIndex, setPhaseIndex] = useState(0);
 
   const phases = useMemo(

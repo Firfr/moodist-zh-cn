@@ -15,7 +15,7 @@ export function Pomodoro({ open }: PomodoroProps) {
     <Item
       active={running}
       icon={<MdOutlineAvTimer />}
-      label="Pomodoro"
+      label="番茄钟"
       shortcut="Shift + P"
       onClick={open}
     />
