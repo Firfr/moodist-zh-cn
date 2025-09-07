@@ -48,23 +48,23 @@ export function Notepad({ onClose, show }: NotepadProps) {
   return (
     <Modal show={show} wide onClose={onClose}>
       <header className={styles.header}>
-        <h2 className={styles.label}>您的笔记</h2>
+        <h2 className={styles.label}>Your Note</h2>
         <div className={styles.buttons}>
           <Button
             icon={copying ? <FaCheck /> : <LuCopy />}
-            tooltip="复制笔记(仅HTTPS协议可用)"
+            tooltip="Copy Note"
             onClick={() => copy(note)}
           />
           <Button
             icon={<LuDownload />}
-            tooltip="下载笔记"
-            onClick={() => download('Moodit笔记.txt', note)}
+            tooltip="Download Note"
+            onClick={() => download('Moodit Note.txt', note)}
           />
           <Button
             critical={!history}
             icon={history ? <FaUndo /> : <BiTrash />}
             recommended={!!history}
-            tooltip={history ? '恢复笔记' : '清除笔记'}
+            tooltip={history ? 'Restore Note' : 'Clear Note'}
             onClick={() => (history ? restore() : clear())}
           />
         </div>
@@ -73,7 +73,7 @@ export function Notepad({ onClose, show }: NotepadProps) {
       <textarea
         className={styles.textarea}
         dir="auto"
-        placeholder="开始记录您的想法、灵感或待办事项。"
+        placeholder="What is on your mind?"
         ref={textareaRef}
         spellCheck={false}
         value={note}
@@ -82,8 +82,8 @@ export function Notepad({ onClose, show }: NotepadProps) {
       />
 
       <p className={styles.counter}>
-        {characters} 字符{characters !== 1 && ''} • {words} 词组
-        {words !== 1 && ''}
+        {characters} character{characters !== 1 && 's'} • {words} word
+        {words !== 1 && 's'}
       </p>
     </Modal>
   );

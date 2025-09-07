@@ -8,6 +8,6 @@ interface BinauralProps {
 
 export function Binaural({ open }: BinauralProps) {
   return (
-    <Item icon={<FaHeadphonesAlt />} label="双耳拍频" onClick={open} />
+    <Item icon={<FaHeadphonesAlt />} label="Binaural Beats" onClick={open} />
   );
 }

@@ -75,16 +75,17 @@ export function SharedModal() {
 
     override(newSounds);
     setIsOpen(false);
-    showSnackbar('完成！您可以立即播放新的声音组合。');
+    showSnackbar('Done! You can now play the new selection.');
   };
 
   useCloseListener(() => setIsOpen(false));
 
   return (
     <Modal show={isOpen} onClose={() => setIsOpen(false)}>
-      <h1 className={styles.heading}>检测到新的声音组合！</h1>
+      <h1 className={styles.heading}>New sound mix detected!</h1>
       <p className={styles.desc}>
-      有人分享了一个新的声音组合给您。<br />您是否要覆盖当前的声音选择？
+        Someone has shared the following mix with you. Would you want to
+        override your current selection?
       </p>
       <div className={styles.sounds}>
         {sharedSounds.map(sound => (
@@ -95,13 +96,13 @@ export function SharedModal() {
       </div>
       <div className={styles.footer}>
         <button className={cn(styles.button)} onClick={() => setIsOpen(false)}>
-        取消
+          Cancel
         </button>
         <button
           className={cn(styles.button, styles.primary)}
           onClick={handleOverride}
         >
-          覆盖
+          Override
         </button>
       </div>
     </Modal>

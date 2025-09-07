@@ -10,7 +10,7 @@ export function BreathingExercise({ open }: BreathingExerciseProps) {
   return (
     <Item
       icon={<IoMdFlower />}
-      label="呼吸练习"
+      label="Breathing Exercise"
       shortcut="Shift + B"
       onClick={open}
     />

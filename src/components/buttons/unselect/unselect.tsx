@@ -45,8 +45,8 @@ export function UnselectButton() {
               showDelay={0}
               content={
                 hasHistory
-                  ? '恢复未选择的声音。'
-                  : '取消选择所有声音。'
+                  ? 'Restore unselected sounds.'
+                  : 'Unselect all sounds.'
               }
             >
               <button

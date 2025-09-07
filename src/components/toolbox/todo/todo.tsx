@@ -13,8 +13,8 @@ export function Todo({ onClose, show }: TodoProps) {
   return (
     <Modal show={show} onClose={onClose}>
       <header className={styles.header}>
-        <h2 className={styles.title}>待办事项清单</h2>
-        <p className={styles.desc}>超级简单的待办事项清单。</p>
+        <h2 className={styles.title}>Todo Checklist</h2>
+        <p className={styles.desc}>Super simple todo list.</p>
       </header>
 
       <Form />

@@ -3,7 +3,7 @@ import { FaGithub } from 'react-icons/fa/index';
 
 import { SpecialButton } from './special-button';
 import { Container } from './container';
-import { Binary } from './binary';
+import Binary from './binary.astro';
 ---
 
 <div class="source">
@@ -16,21 +16,16 @@ import { Binary } from './binary';
         </div>
       </div>
 
-      <h2 class="title"><span>开源</span></h2>
-      <p class="desc">Moodist 是免费且开源的！</p>
+      <h2 class="title"><span>Open Source</span></h2>
+      <p class="desc">Moodist is free and open-source!</p>
 
       <div class="button">
         <SpecialButton href="https://github.com/remvze/moodist">
-          源代码
-        </SpecialButton>
-      </div>
-      <div class="button">
-        <SpecialButton href="https://github.com/Firfr/moodist-zh-cn">
-          汉化仓库
+          Source Code
         </SpecialButton>
       </div>
 
-      <div class="binary"><Binary client:load /></div>
+      <div class="binary"><Binary /></div>
     </div>
   </Container>
 </div>

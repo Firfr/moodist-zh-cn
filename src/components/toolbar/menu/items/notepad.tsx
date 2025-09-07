@@ -15,7 +15,7 @@ export function Notepad({ open }: NotepadProps) {
     <Item
       active={!!note.length}
       icon={<MdNotes />}
-      label="便签"
+      label="Notepad"
       shortcut="Shift + N"
       onClick={open}
     />

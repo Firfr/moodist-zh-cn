@@ -91,9 +91,9 @@ export function SleepTimerModal({ onClose, show }: SleepTimerModalProps) {
   return (
     <Modal show={show} onClose={onClose}>
       <header className={styles.header}>
-        <h2 className={styles.title}>定时关闭</h2>
+        <h2 className={styles.title}>Sleep Timer</h2>
         <p className={styles.desc}>
-        停止声音的时间。
+          Stop sounds after a certain amount of time.
         </p>
       </header>
 
@@ -101,11 +101,11 @@ export function SleepTimerModal({ onClose, show }: SleepTimerModalProps) {
         <div className={styles.controls}>
           <div className={styles.inputs}>
             {!running && (
-              <Field label="小时" value={hours} onChange={setHours} />
+              <Field label="Hours" value={hours} onChange={setHours} />
             )}
 
             {!running && (
-              <Field label="分钟" value={minutes} onChange={setMinutes} />
+              <Field label="Minutes" value={minutes} onChange={setMinutes} />
             )}
           </div>
 
@@ -118,7 +118,7 @@ export function SleepTimerModal({ onClose, show }: SleepTimerModalProps) {
                 type="button"
                 onClick={handleReset}
               >
-                重置
+                Reset
               </button>
             )}
 
@@ -127,7 +127,7 @@ export function SleepTimerModal({ onClose, show }: SleepTimerModalProps) {
                 className={cn(styles.button, styles.primary)}
                 type="submit"
               >
-                开始
+                Start
               </button>
             )}
           </div>

@@ -10,7 +10,7 @@ export function Todo({ open }: TodoProps) {
   return (
     <Item
       icon={<MdTaskAlt />}
-      label="待办清单"
+      label="Todo Checklist"
       shortcut="Shift + T"
       onClick={open}
     />

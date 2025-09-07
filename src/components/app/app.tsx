@@ -79,7 +79,7 @@ export function App() {
         icon: <BiSolidHeart />,
         id: 'favorites',
         sounds: favoriteSounds as Array<Sound>,
-        title: '收藏夹',
+        title: 'Favorites',
       });
     }
 

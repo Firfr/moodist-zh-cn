@@ -73,8 +73,8 @@ export function Countdown({ onClose, show }: CountdownProps) {
   return (
     <Modal show={show} onClose={onClose}>
       <header className={styles.header}>
-        <h2 className={styles.title}>倒计时</h2>
-        <p className={styles.desc}>超级简单的倒计时器。</p>
+        <h2 className={styles.title}>Countdown Timer</h2>
+        <p className={styles.desc}>Super simple countdown timer.</p>
       </header>
 
       {isFormVisible ? (
@@ -118,7 +118,7 @@ export function Countdown({ onClose, show }: CountdownProps) {
               className={cn(styles.button, styles.primary)}
               onClick={handleStart}
             >
-              开始
+              Start
             </button>
           </div>
         </div>
@@ -131,14 +131,14 @@ export function Countdown({ onClose, show }: CountdownProps) {
 
           <div className={styles.buttonContainer}>
             <button className={styles.button} onClick={handleBack}>
-            返回
+              Back
             </button>
 
             <button
               className={cn(styles.button, styles.primary)}
               onClick={toggleTimer}
             >
-              {isActive ? '暂停' : '开始'}
+              {isActive ? 'Pause' : 'Start'}
             </button>
           </div>
         </div>

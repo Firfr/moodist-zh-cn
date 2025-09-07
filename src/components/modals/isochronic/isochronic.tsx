@@ -17,12 +17,12 @@ interface Preset {
 }
 
 const presets: Preset[] = [
-  { baseFrequency: 100, beatFrequency: 2, name: 'δ波（深度睡眠） 2 Hz' },
-  { baseFrequency: 100, beatFrequency: 5, name: 'θ波（冥想） 5 Hz' },
-  { baseFrequency: 100, beatFrequency: 10, name: 'α波（放松） 10 Hz' },
-  { baseFrequency: 100, beatFrequency: 20, name: 'β波（专注） 20 Hz' },
-  { baseFrequency: 100, beatFrequency: 40, name: 'γ波（认知） 40 Hz' },
-  { baseFrequency: 440, beatFrequency: 10, name: '自定义' },
+  { baseFrequency: 100, beatFrequency: 2, name: 'Delta (Deep Sleep) 2 Hz' },
+  { baseFrequency: 100, beatFrequency: 5, name: 'Theta (Meditation) 5 Hz' },
+  { baseFrequency: 100, beatFrequency: 10, name: 'Alpha (Relaxation) 10 Hz' },
+  { baseFrequency: 100, beatFrequency: 20, name: 'Beta (Focus) 20 Hz' },
+  { baseFrequency: 100, beatFrequency: 40, name: 'Gamma (Cognition) 40 Hz' },
+  { baseFrequency: 440, beatFrequency: 10, name: 'Custom' },
 ];
 
 export function IsochronicModal({ onClose, show }: IsochronicProps) {
@@ -31,7 +31,7 @@ export function IsochronicModal({ onClose, show }: IsochronicProps) {
   const [volume, setVolume] = useState<number>(0.5); // Default volume at 50%
   const [waveform] = useState<OscillatorType>('sine'); // Default waveform
   const [isPlaying, setIsPlaying] = useState<boolean>(false);
-  const [selectedPreset, setSelectedPreset] = useState<string>('自定义');
+  const [selectedPreset, setSelectedPreset] = useState<string>('Custom');
 
   const audioContextRef = useRef<AudioContext | null>(null);
   const oscillatorRef = useRef<OscillatorNode | null>(null);
@@ -136,7 +136,7 @@ export function IsochronicModal({ onClose, show }: IsochronicProps) {
 
   useEffect(() => {
     // Update frequencies when a preset is selected
-    if (selectedPreset !== '自定义') {
+    if (selectedPreset !== 'Custom') {
       const preset = presets.find(p => p.name === selectedPreset);
       if (preset) {
         setBaseFrequency(preset.baseFrequency);
@@ -149,7 +149,7 @@ export function IsochronicModal({ onClose, show }: IsochronicProps) {
     const selected = e.target.value;
     setSelectedPreset(selected);
 
-    if (selected === '自定义') {
+    if (selected === 'Custom') {
       // Allow user to input custom frequencies
       return;
     }
@@ -164,13 +164,13 @@ export function IsochronicModal({ onClose, show }: IsochronicProps) {
   return (
     <Modal show={show} onClose={onClose}>
       <header className={styles.header}>
-        <h2 className={styles.title}>等距音</h2>
-        <p className={styles.desc}>等距音生成器。</p>
+        <h2 className={styles.title}>Isochronic Tone</h2>
+        <p className={styles.desc}>Isochronic tone generator.</p>
       </header>
 
       <div className={styles.fieldWrapper}>
         <label>
-        预设:
+          Presets:
           <select value={selectedPreset} onChange={handlePresetChange}>
             {presets.map(preset => (
               <option key={preset.name} value={preset.name}>
@@ -180,11 +180,11 @@ export function IsochronicModal({ onClose, show }: IsochronicProps) {
           </select>
         </label>
       </div>
-      {selectedPreset === '自定义' && (
+      {selectedPreset === 'Custom' && (
         <>
           <div className={styles.fieldWrapper}>
             <label>
-            基础频率 (Hz):
+              Base Frequency (Hz):
               <input
                 max="2000"
                 min="20"
@@ -199,7 +199,7 @@ export function IsochronicModal({ onClose, show }: IsochronicProps) {
           </div>
           <div className={styles.fieldWrapper}>
             <label>
-            音调频率 (Hz):
+              Tone Frequency (Hz):
               <input
                 max="40"
                 min="0.1"
@@ -230,7 +230,7 @@ export function IsochronicModal({ onClose, show }: IsochronicProps) {
       )}
       <div className={styles.fieldWrapper}>
         <label>
-        音量调节:
+          Volume:
           <Slider
             className={styles.volume}
             max={1}
@@ -247,10 +247,10 @@ export function IsochronicModal({ onClose, show }: IsochronicProps) {
           disabled={isPlaying}
           onClick={startSound}
         >
-          开始
+          Start
         </button>
         <button disabled={!isPlaying} onClick={stopSound}>
-        停止
+          Stop
         </button>
       </div>
     </Modal>

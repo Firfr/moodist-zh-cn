@@ -10,7 +10,7 @@ export function Shortcuts({ open }: ShortcutsProps) {
   return (
     <Item
       icon={<MdKeyboardCommandKey />}
-      label="快捷键"
+      label="Shortcuts"
       shortcut="Shift + H"
       onClick={open}
     />

@@ -1,14 +1,10 @@
-#version: '3.9'
+version: '3.9'
 services:
-  moodist-zh:
-    container_name: moodist-zh
-    image: crpi-aiy5xfxuied4b3f9.cn-chengdu.personal.cr.aliyuncs.com/firfe/moodist:25.4.6
-    network_mode: bridge
-    restart: always
+  moodist:
+    image: ghcr.io/remvze/moodist
     logging:
       options:
-        max-size: 1m
-        max-file: '3'
+        max-size: 1g
+    restart: always
     ports:
-      - 9260:9260
-      - 9460:9460
+      - '8080:8080'

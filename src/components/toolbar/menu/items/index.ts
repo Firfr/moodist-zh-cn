@@ -12,4 +12,4 @@ export { Todo as TodoItem } from './todo';
 export { Countdown as CountdownItem } from './countdown';
 export { Binaural as BinauralItem } from './binaural';
 export { Isochronic as IsochronicItem } from './isochronic';
-export { Source as SourceItemZh } from './source-zh';
+export { Lofi as LofiItem } from './lofi';

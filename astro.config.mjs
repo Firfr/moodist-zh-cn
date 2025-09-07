@@ -4,10 +4,6 @@ import react from '@astrojs/react';
 import AstroPWA from '@vite-pwa/astro';
 
 export default defineConfig({
-  server: {
-    host: '0.0.0.0', // 监听所有网卡
-    port: 1234,      // 指定端口
-  },
   integrations: [
     react(),
     AstroPWA({

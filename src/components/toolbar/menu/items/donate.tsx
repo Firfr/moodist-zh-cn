@@ -7,7 +7,7 @@ export function Donate() {
     <Item
       href="https://buymeacoffee.com/remvze"
       icon={<SiBuymeacoffee />}
-      label="请我喝杯咖啡"
+      label="Buy Me a Coffee"
     />
   );
 }

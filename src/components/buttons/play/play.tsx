@@ -20,7 +20,7 @@ export function PlayButton() {
   const handleToggle = useCallback(() => {
     if (locked) return;
 
-    if (noSelected) return showSnackbar('请先选择要播放的声音。');
+    if (noSelected) return showSnackbar('Please first select a sound to play.');
 
     toggle();
   }, [showSnackbar, toggle, noSelected, locked]);
@@ -42,14 +42,14 @@ export function PlayButton() {
           <span aria-hidden="true">
             <BiPause />
           </span>{' '}
-          暂停
+          Pause
         </>
       ) : (
         <>
           <span aria-hidden="true">
             <BiPlay />
           </span>{' '}
-          播放
+          Play
         </>
       )}
     </button>

@@ -19,11 +19,11 @@ export function List({ close }: ListProps) {
   return (
     <div className={styles.list}>
       <h3 className={styles.title}>
-      您的预设 {presets.length > 0 && `(${presets.length})`}
+        Your Presets {presets.length > 0 && `(${presets.length})`}
       </h3>
 
       {!presets.length && (
-        <p className={styles.empty}>您尚未创建任何预设。</p>
+        <p className={styles.empty}>You don&apos;t have any presets yet.</p>
       )}
 
       {presets.map(preset => (

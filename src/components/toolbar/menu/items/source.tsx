@@ -7,7 +7,7 @@ export function Source() {
     <Item
       href="https://github.com/remvze/moodist"
       icon={<LuGithub />}
-      label="源代码"
+      label="Source Code"
     />
   );
 }

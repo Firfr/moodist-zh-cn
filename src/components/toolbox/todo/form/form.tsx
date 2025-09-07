@@ -22,12 +22,12 @@ export function Form() {
     <form onSubmit={handleSubmit}>
       <div className={styles.wrapper}>
         <input
-          placeholder="我必须……"
+          placeholder="I have to ..."
           type="text"
           value={value}
           onChange={e => setValue(e.target.value)}
         />
-        <button type="submit">添加</button>
+        <button type="submit">Add</button>
       </div>
     </form>
   );

@@ -15,7 +15,7 @@ export function Share({ open }: ShareProps) {
     <Item
       disabled={noSelected}
       icon={<IoShareSocialSharp />}
-      label="分享声音"
+      label="Share Sounds"
       shortcut="Shift + S"
       onClick={open}
     />
