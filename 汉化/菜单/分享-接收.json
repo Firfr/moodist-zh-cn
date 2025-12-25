@@ -1,0 +1,22 @@
+[
+  {
+    "原文": "Done! You can now play the new selection\\.",
+    "翻译": "完成！您可以立即播放新的声音组合。"
+  },
+  {
+    "原文": "New sound mix detected!",
+    "翻译": "检测到新的声音组合！"
+  },
+  {
+    "原文": "Someone has shared the following mix with you. Would you want to[[:space:]]*override your current selection?",
+    "翻译": "有人分享了一个新的声音组合给您。<br />您是否要覆盖当前的声音选择？"
+  },
+  {
+    "原文": "Cancel",
+    "翻译": "取消"
+  },
+  {
+    "原文": "  Override",
+    "翻译": "覆盖"
+  }
+]

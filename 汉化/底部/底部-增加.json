@@ -1,0 +1,6 @@
+[
+  {
+    "原文": "</SpecialButton>[[:space:]]*</div>",
+    "翻译": "</SpecialButton>\n</div>\n<div class=\"button\">\n<SpecialButton href=\"https://github.com/Firfr/moodist-zh-cn\">\nGitHub 汉化仓库 \n</SpecialButton> &#12288; \n<SpecialButton href=\"https://gitee.com/firfe/moodist-zh-cn\">\nGitee 汉化仓库 \n</SpecialButton> &#12288; \n<SpecialButton href=\"https://gitee.com/firfe/me\">\n汉化打赏支持\n</SpecialButton>\n</div>"
+  }
+]

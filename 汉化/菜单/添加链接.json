@@ -1,0 +1,10 @@
+[
+  {
+    "原文": "LofiItem,[[:space:]]*}",
+    "翻译": "LofiItem,\nSourceItemZh,\nDonateZH,\n}"
+  },
+  {
+    "原文": "<SourceItem />[[:space:]]*</motion\\.div>",
+    "翻译": "<SourceItem />\n<SourceItemZh />\n<DonateZH />\n</motion.div>"
+  }
+]
