@@ -1,0 +1,14 @@
+[
+  {
+    "原文": "Moodist: Ambient Sounds for Focus and Calm",
+    "翻译": "Moodist：助你专注与放松的环境音"
+  },
+  {
+    "原文": "Moodist is a free and open-source ambient sound generator featuring ${count()} carefully curated sounds. Create your ideal atmosphere for relaxation, focus, or creativity with this versatile tool.",
+    "翻译": "Moodist 是一款免费开源的环境音生成器，收录了 ${count()} 个精心挑选的声音。用这款多功能工具，打造属于你的放松、专注或创意氛围。"
+  },
+  {
+    "原文": "\"en\"",
+    "翻译": "\"zh-CN\""
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "原文": "{ background",
+    "翻译": "{ lang: \"zh-CN\", background"
+  },
+  {
+    "原文": "Ambient sounds for focus and calm.",
+    "翻译": "助你专注与放松的环境音"
+  },
+  {
+    "原文": "/assets",
+    "翻译": "./assets"
+  },
+  {
+    "原文": "scope: \"/\"",
+    "翻译": "scope: \"./\""
+  },
+  {
+    "原文": "start_url: \"/\"",
+    "翻译": "start_url: \"./\""
+  },
+  {
+    "原文": "back: \"/\"",
+    "翻译": "back: \"index.html\""
+  }
+]
